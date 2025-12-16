@@ -2,18 +2,41 @@
   {
     "id": "andorians",
     "name": "Andorians",
-    "type": "",
-    "quadrant": "",
-    "homeworld": "",
-    "affiliations": [],
-    "firstAppearance": "",
-    "overview": "",
-    "biology": "",
-    "society": "",
-    "capabilities": "",
-    "relations": "",
-    "notableIndividuals": [],
-    "keyAppearances": [],
+    "type": "Warp-capable humanoid species; founding Federation member world",
+    "quadrant": "Near the Alpha/Beta Quadrant boundary (Procyon/Andorian system; close neighbor of Vulcan)",
+    "homeworld": "Andoria (icy inhabited moon orbiting a gas giant commonly associated with the name Andor; Procyon/Alpha Canis Minoris system)",
+    "affiliations": [
+      "Andorian Empire",
+      "Andorian Imperial Guard",
+      "Coalition of Planets (22nd century)",
+      "United Federation of Planets (founding member world: 2161)"
+    ],
+    "firstAppearance": "TOS: \"Journey to Babel\"",
+    "overview": "Andorians are a warp-capable humanoid species from the icy moon Andoria, capital of the Andorian Empire. Recognizable by blue skin, white-to-gray hair, and a pair of sensitive antennae, they have a long warrior tradition and a reputation for being passionate, direct, and volatile—yet deeply loyal to clan and family.\n\nIn the mid-22nd century, Andoria was a major regional power whose long-running tensions with Vulcan were inflamed by espionage and border incidents. Through diplomacy and shared threats, Andorians helped form the Coalition of Planets with Humans, Vulcans, and Tellarites—laying political groundwork for the United Federation of Planets, which Andoria joined as a founding member in 2161.\n\nCanon also establishes an Andorian subspecies called the Aenar, ice-dwellers from Andoria’s Northern Wastes who were long treated as myth until their rediscovery in the early 22nd century.",
+    "biology": "Andorians are slim-built but physically formidable, with a higher metabolic rate than Humans. They are adapted to cold environments and strongly identify with their world’s ice and severe climates. Andorian blood has been depicted as dark blue, and their tongues and gums can range from dark blue to pink.\n\nThe most distinctive Andorian feature is their pair of antennae. The antennae are muscular, can be controlled independently, and are extremely sensitive; loss of an antenna is culturally humiliating, though regrowth is possible. Antennae are also treated as important sensory/communication organs in on-screen depictions.\n\nMedical notes in canon indicate that standard intravenous injections may be unsuitable for Andorian physiology, with intramuscular delivery used instead. Andorians also demonstrate vulnerabilities tied to their physiology in specific contexts (for example, heightened risk from certain infections), but remain generally resilient across many environments.",
+    "society": "Andorian society is strongly shaped by honor culture and military prestige. Service in the Imperial Guard is treated as a high honor, and rank can carry significant social reputation. Andorians are suspicious of deception yet capable of strategic duplicity when they believe it necessary, especially in interstellar conflicts.\n\nA major cultural institution is the Ushaan: a highly regulated code of honor that can compel a duel to the death using an ushaan-tor (an ice miner’s tool). Rituals surrounding death and remembrance include returning a portion of a fallen Guard member back to Andoria’s ice and, for exceptional honor, to the Wall of Heroes.\n\nAndorian women are depicted as socially equal and fully capable as soldiers. Canon references also indicate distinctive marriage customs: weddings involve groups of four people except under certain circumstances, suggesting a nonstandard marital structure compared with many other Federation cultures.",
+    "capabilities": "Andorians are known for determination, endurance, and close-quarters combat skill, often trained from childhood in traditional weapons and martial disciplines. Their military tradition produces experienced officers and commandos, and Andorian ship designs (including long-serving battle cruisers) appear across multiple eras.\n\nStrategically, Andorians combine directness with paranoia born of regional rivalries, favoring strong intelligence gathering, readiness, and rapid escalation when threatened. In coalition politics, Andorians can be hard negotiators but have repeatedly demonstrated willingness to cooperate when common security and stability are at stake.",
+    "relations": "Andorian–Vulcan relations are historically fraught, including espionage, disputed settlements, and crises that nearly triggered open war in the 2150s. Revelations about covert surveillance and the intervention of outside mediators helped redirect the rivalry toward diplomacy and eventually alliance.\n\nAndorians played an important role in forging early interstellar cooperation with Humans and Tellarites, including joint operations designed to counter destabilizing threats in the region. These efforts contributed directly to the political path that culminated in Federation founding.\n\nWithin the Federation era, Andorians appear across multiple series and periods as Starfleet personnel, diplomats, and citizens—often embodying the tension between warrior tradition and Federation civic ideals.",
+    "notableIndividuals": [
+      "Thy'lek Shran",
+      "Talas",
+      "Thelev",
+      "Jennifer Sh'reyan",
+      "Hemmer (Aenar)"
+    ],
+    "keyAppearances": [
+      "TOS: \"Journey to Babel\"",
+      "TOS: \"Whom Gods Destroy\"",
+      "Star Trek: The Motion Picture",
+      "ENT: \"The Andorian Incident\"",
+      "ENT: \"Shadows of P'Jem\"",
+      "ENT: \"Cease Fire\"",
+      "ENT: \"Babel One\"",
+      "ENT: \"United\"",
+      "ENT: \"The Aenar\"",
+      "TNG: \"Data's Day\"",
+      "VOY: \"One Small Step\""
+    ],
     "imageUrl": ""
   },
   {

@@ -1,0 +1,746 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Aliens Console</title>
+  <style>
+    :root {
+      --bg0: #070a12;
+      --bg1: #0b1630;
+      --panel: rgba(14, 22, 46, 0.78);
+      --panel2: rgba(9, 14, 30, 0.75);
+      --gold: #d4b35e;
+      --gold2: #f3d88a;
+      --ink: #e8eefc;
+      --muted: rgba(232, 238, 252, 0.72);
+      --line: rgba(212, 179, 94, 0.55);
+      --line2: rgba(212, 179, 94, 0.25);
+      --shadow: 0 18px 38px rgba(0,0,0,0.55);
+      --soft: 0 10px 22px rgba(0,0,0,0.42);
+      --radius: 18px;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 800px at 20% 15%, rgba(88, 140, 255, 0.20), transparent 55%),
+        radial-gradient(900px 600px at 85% 25%, rgba(212, 179, 94, 0.14), transparent 60%),
+        linear-gradient(135deg, var(--bg0), var(--bg1));
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    .wrap {
+      width: min(1260px, calc(100% - 28px));
+      margin: 16px auto 22px;
+    }
+
+    .topbar {
+      display: flex;
+      gap: 14px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 14px 12px;
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(20, 30, 62, 0.82), rgba(8, 12, 26, 0.68));
+      border: 2px solid var(--line);
+      box-shadow: var(--shadow);
+      position: sticky;
+      top: 10px;
+      z-index: 10;
+      backdrop-filter: blur(10px);
+    }
+
+    .brand {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 240px;
+    }
+
+    .brand .title {
+      font-size: 26px;
+      line-height: 1.05;
+      letter-spacing: 0.6px;
+      font-weight: 800;
+      background: linear-gradient(180deg, var(--gold2), var(--gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 1px 0 rgba(0,0,0,0.35);
+    }
+
+    .brand .sub {
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.4px;
+    }
+
+    .actions {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      appearance: none;
+      border: 2px solid var(--line2);
+      background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.04));
+      color: var(--ink);
+      border-radius: 14px;
+      padding: 10px 14px;
+      cursor: pointer;
+      box-shadow: var(--soft);
+      transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+      font-weight: 650;
+      letter-spacing: 0.2px;
+      white-space: nowrap;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--line);
+      background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
+    }
+
+    .btn:active { transform: translateY(0px); }
+
+    .search {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 14px;
+      border: 2px solid var(--line2);
+      background: rgba(7, 10, 18, 0.40);
+      box-shadow: var(--soft);
+      min-width: min(520px, 46vw);
+    }
+
+    .search input {
+      width: 100%;
+      border: 0;
+      outline: none;
+      background: transparent;
+      color: var(--ink);
+      font-size: 15px;
+      letter-spacing: 0.2px;
+    }
+
+    .search .pill {
+      font-size: 12px;
+      color: rgba(10, 12, 18, 0.9);
+      background: linear-gradient(180deg, var(--gold2), var(--gold));
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(0,0,0,0.22);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.35);
+      user-select: none;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 14px;
+      margin-top: 14px;
+    }
+
+    .panel {
+      border-radius: var(--radius);
+      border: 2px solid var(--line2);
+      background: linear-gradient(180deg, var(--panel), var(--panel2));
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .panelhead {
+      padding: 12px 14px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid rgba(212, 179, 94, 0.22);
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.02));
+    }
+
+    .panelhead .label {
+      font-weight: 800;
+      letter-spacing: 0.4px;
+      color: rgba(243, 216, 138, 0.98);
+      text-shadow: 0 1px 0 rgba(0,0,0,0.35);
+      font-size: 16px;
+    }
+
+    .panelbody { padding: 12px; }
+
+    .list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .card {
+      border-radius: 16px;
+      border: 2px solid rgba(212, 179, 94, 0.22);
+      background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+      box-shadow: 0 12px 24px rgba(0,0,0,0.35);
+      padding: 12px;
+      cursor: pointer;
+      transition: transform 140ms ease, border-color 140ms ease, background 140ms ease;
+      display: grid;
+      grid-template-columns: 56px 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .card:hover {
+      transform: translateY(-1px);
+      border-color: rgba(212, 179, 94, 0.55);
+      background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+    }
+
+    .card.active {
+      border-color: rgba(243, 216, 138, 0.92);
+      box-shadow: 0 16px 32px rgba(0,0,0,0.45);
+    }
+
+    .sigil {
+      width: 56px;
+      height: 56px;
+      border-radius: 16px;
+      border: 2px solid rgba(212, 179, 94, 0.40);
+      background:
+        radial-gradient(30px 30px at 30% 30%, rgba(243, 216, 138, 0.30), transparent 55%),
+        linear-gradient(180deg, rgba(18, 26, 54, 0.92), rgba(8, 12, 26, 0.80));
+      box-shadow: 0 12px 22px rgba(0,0,0,0.35);
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      color: rgba(243, 216, 138, 0.95);
+      letter-spacing: 0.5px;
+      text-shadow: 0 1px 0 rgba(0,0,0,0.45);
+      user-select: none;
+    }
+
+    .card .name {
+      font-weight: 850;
+      letter-spacing: 0.3px;
+      font-size: 16px;
+      line-height: 1.2;
+    }
+
+    .card .meta {
+      margin-top: 3px;
+      font-size: 12.5px;
+      color: var(--muted);
+      line-height: 1.25;
+      white-space: pre-wrap;
+    }
+
+    .detailTop {
+      display: grid;
+      grid-template-columns: 170px 1fr;
+      gap: 14px;
+      align-items: center;
+    }
+
+    .hero {
+      width: 170px;
+      height: 170px;
+      border-radius: 22px;
+      border: 2px solid rgba(243, 216, 138, 0.60);
+      background:
+        radial-gradient(120px 120px at 35% 25%, rgba(88, 140, 255, 0.28), transparent 62%),
+        radial-gradient(120px 120px at 70% 70%, rgba(243, 216, 138, 0.20), transparent 62%),
+        linear-gradient(180deg, rgba(18, 26, 54, 0.90), rgba(8, 12, 26, 0.78));
+      box-shadow: 0 18px 32px rgba(0,0,0,0.45);
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .hero .mark {
+      font-size: 74px;
+      font-weight: 950;
+      background: linear-gradient(180deg, var(--gold2), var(--gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 2px 0 rgba(0,0,0,0.28);
+      letter-spacing: 1px;
+      transform: translateY(-2px);
+      user-select: none;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: none;
+    }
+
+    .h1 {
+      font-size: 30px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      margin: 0 0 4px;
+      background: linear-gradient(180deg, var(--gold2), var(--gold));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+      text-shadow: 0 1px 0 rgba(0,0,0,0.40);
+    }
+
+    .h1::after {
+      content: "";
+      display: block;
+      height: 4px;
+      margin-top: 8px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, rgba(243, 216, 138, 0.0), rgba(243, 216, 138, 0.85), rgba(212, 179, 94, 0.85), rgba(243, 216, 138, 0.0));
+      box-shadow: 0 8px 18px rgba(212, 179, 94, 0.22);
+    }
+
+    .lede {
+      margin-top: 10px;
+      color: rgba(232, 238, 252, 0.84);
+      line-height: 1.45;
+      font-size: 15px;
+    }
+
+    .kv {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .tile {
+      border-radius: 16px;
+      border: 2px solid rgba(212, 179, 94, 0.22);
+      background: linear-gradient(180deg, rgba(255,255,255,0.07), rgba(255,255,255,0.03));
+      box-shadow: 0 12px 22px rgba(0,0,0,0.30);
+      padding: 12px;
+    }
+
+    .tile .k {
+      font-size: 12px;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      color: rgba(243, 216, 138, 0.92);
+      margin-bottom: 6px;
+      font-weight: 850;
+    }
+
+    .tile .v {
+      font-size: 14.5px;
+      color: rgba(232, 238, 252, 0.86);
+      line-height: 1.35;
+      white-space: pre-wrap;
+    }
+
+    .sections {
+      margin-top: 12px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+
+    .section {
+      border-radius: 16px;
+      border: 2px solid rgba(212, 179, 94, 0.18);
+      background: linear-gradient(180deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+      padding: 12px;
+    }
+
+    .section h3 {
+      margin: 0 0 6px;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+      color: rgba(243, 216, 138, 0.92);
+    }
+
+    .section p {
+      margin: 0;
+      color: rgba(232, 238, 252, 0.86);
+      line-height: 1.5;
+      font-size: 14.5px;
+      white-space: pre-wrap;
+    }
+
+    .chips {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .chip {
+      padding: 7px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(212, 179, 94, 0.32);
+      background: rgba(7, 10, 18, 0.28);
+      color: rgba(232, 238, 252, 0.84);
+      font-size: 12.5px;
+      box-shadow: 0 10px 18px rgba(0,0,0,0.28);
+    }
+
+    .empty {
+      padding: 18px 14px;
+      border-radius: 16px;
+      border: 2px dashed rgba(212, 179, 94, 0.25);
+      color: rgba(232, 238, 252, 0.72);
+      line-height: 1.45;
+      background: rgba(7, 10, 18, 0.20);
+    }
+
+    .foot {
+      margin-top: 14px;
+      color: rgba(232, 238, 252, 0.55);
+      font-size: 12px;
+      text-align: center;
+      letter-spacing: 0.3px;
+    }
+
+    @media (max-width: 980px) {
+      .grid { grid-template-columns: 1fr; }
+      .search { min-width: 0; width: 100%; }
+      .brand { min-width: 0; }
+      .detailTop { grid-template-columns: 1fr; }
+      .hero { width: 100%; height: 220px; }
+      .kv { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="title">Aliens Console</div>
+        <div class="sub">Star Trek aliens & species (canon, excluding Discovery)</div>
+      </div>
+
+      <div class="search">
+        <span class="pill">SEARCH</span>
+        <input id="searchInput" type="text" placeholder="Type to filter species (e.g., Vulcan, Klingon, Borg)..." autocomplete="off" />
+      </div>
+
+      <div class="actions">
+        <button class="btn" id="clearBtn">Clear</button>
+        <button class="btn" id="aboutBtn">About</button>
+      </div>
+    </div>
+
+    <div class="grid">
+      <div class="panel">
+        <div class="panelhead">
+          <div class="label">Species List</div>
+          <div class="label" id="countLabel" style="opacity:.85;font-weight:800;font-size:13px;"></div>
+        </div>
+        <div class="panelbody">
+          <div class="list" id="list"></div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panelhead">
+          <div class="label">Detail View</div>
+          <div class="label" id="detailTag" style="opacity:.85;font-weight:800;font-size:13px;"></div>
+        </div>
+        <div class="panelbody" id="detail"></div>
+      </div>
+    </div>
+
+    <div class="foot">Inline JSON starter build. Next step: swap to external JSON and expand the roster.</div>
+  </div>
+
+  <script>
+    const aliensData = [
+      {
+        id: "vulcans",
+        name: "Vulcans",
+        type: "Humanoid species",
+        quadrant: "Alpha / Beta",
+        homeworld: "Vulcan",
+        affiliations: ["United Federation of Planets (founding member)"],
+        firstAppearance: "TOS pilot: \"The Cage\" (original pilot)",
+        overview:
+          "Vulcans are a long-lived humanoid species known for disciplined logic, cultural restraint, and a commitment to peaceful self-mastery shaped by their history of extreme emotion and violence. They were among humanity’s earliest major interstellar contacts and became one of the Federation’s founding worlds.",
+        biology:
+          "Typically stronger than humans and adapted to a hotter, drier environment. Copper-based blood (green). Adult Vulcans experience pon farr roughly every seven years, a biological mating drive that can become life-threatening if unresolved.",
+        society:
+          "A philosophical culture rooted in Surak’s teachings, emphasizing logic, emotional control, and ethical restraint. Vulcan society often values privacy and personal discipline, and can appear aloof to outsiders.",
+        capabilities:
+          "Telepathic techniques include the Vulcan mind meld. Many Vulcans practice martial disciplines; the Vulcan neck pinch is a well-known incapacitation technique.",
+        relations:
+          "Vulcans maintain close ties with the Federation but have a complex relationship with their ancient offshoots, the Romulans. Their influence on Starfleet science, diplomacy, and ethics is extensive.",
+        notableIndividuals: ["Spock", "Sarek", "T'Pol", "Tuvok"],
+        keyAppearances: [
+          "TOS: \"Amok Time\" (pon farr; Vulcan society)",
+          "TOS: \"Dagger of the Mind\" (mind meld depiction)",
+          "TNG: \"Sarek\" (mind meld consequences)",
+          "ENT: \"Broken Bow\" / \"The Forge\" arc (Vulcan politics)",
+          "VOY: \"Meld\" / \"Blood Fever\" (Vulcan telepathy; pon farr)"
+        ],
+        imageUrl: ""
+      }
+    ];
+
+    const state = {
+      query: "",
+      selectedId: aliensData[0]?.id || null
+    };
+
+    const elList = document.getElementById("list");
+    const elDetail = document.getElementById("detail");
+    const elSearch = document.getElementById("searchInput");
+    const elCount = document.getElementById("countLabel");
+    const elDetailTag = document.getElementById("detailTag");
+
+    const norm = (s) => (s || "").toString().trim().toLowerCase();
+
+    const getFiltered = () => {
+      const q = norm(state.query);
+      if (!q) return aliensData.slice();
+      return aliensData.filter(a => {
+        const hay = [
+          a.name, a.type, a.homeworld, a.quadrant,
+          ...(a.affiliations || []),
+          ...(a.notableIndividuals || [])
+        ].map(norm).join(" | ");
+        return hay.includes(q);
+      });
+    };
+
+    const makeCard = (a) => {
+      const card = document.createElement("div");
+      card.className = "card" + (a.id === state.selectedId ? " active" : "");
+      card.tabIndex = 0;
+
+      const sigil = document.createElement("div");
+      sigil.className = "sigil";
+      sigil.textContent = (a.name || "?").slice(0, 1).toUpperCase();
+
+      const main = document.createElement("div");
+      const name = document.createElement("div");
+      name.className = "name";
+      name.textContent = a.name || "Unknown";
+
+      const meta = document.createElement("div");
+      meta.className = "meta";
+      const line1 = [a.type, a.homeworld ? `Homeworld: ${a.homeworld}` : ""].filter(Boolean).join(" • ");
+      const line2 = [a.quadrant ? `Quadrant: ${a.quadrant}` : "", a.firstAppearance ? `First: ${a.firstAppearance}` : ""].filter(Boolean).join(" • ");
+      meta.textContent = [line1, line2].filter(Boolean).join("\n");
+
+      main.appendChild(name);
+      main.appendChild(meta);
+
+      card.appendChild(sigil);
+      card.appendChild(main);
+
+      const select = () => {
+        state.selectedId = a.id;
+        render();
+      };
+
+      card.addEventListener("click", select);
+      card.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key === " ") {
+          e.preventDefault();
+          select();
+        }
+      });
+
+      return card;
+    };
+
+    const renderList = () => {
+      const items = getFiltered();
+      elList.innerHTML = "";
+      items.forEach(a => elList.appendChild(makeCard(a)));
+      elCount.textContent = `${items.length} item${items.length === 1 ? "" : "s"}`;
+      if (items.length && !items.some(x => x.id === state.selectedId)) {
+        state.selectedId = items[0].id;
+      }
+    };
+
+    const chips = (arr) => {
+      const wrap = document.createElement("div");
+      wrap.className = "chips";
+      (arr || []).forEach(t => {
+        const c = document.createElement("div");
+        c.className = "chip";
+        c.textContent = t;
+        wrap.appendChild(c);
+      });
+      return wrap;
+    };
+
+    const tile = (k, v) => {
+      const t = document.createElement("div");
+      t.className = "tile";
+      const kk = document.createElement("div");
+      kk.className = "k";
+      kk.textContent = k;
+      const vv = document.createElement("div");
+      vv.className = "v";
+      vv.textContent = v || "—";
+      t.appendChild(kk);
+      t.appendChild(vv);
+      return t;
+    };
+
+    const section = (title, text) => {
+      const s = document.createElement("div");
+      s.className = "section";
+      const h = document.createElement("h3");
+      h.textContent = title;
+      const p = document.createElement("p");
+      p.textContent = text || "—";
+      s.appendChild(h);
+      s.appendChild(p);
+      return s;
+    };
+
+    const renderDetail = () => {
+      const a = aliensData.find(x => x.id === state.selectedId);
+      elDetail.innerHTML = "";
+
+      if (!a) {
+        const empty = document.createElement("div");
+        empty.className = "empty";
+        empty.textContent = "Select a species from the list to view details.";
+        elDetail.appendChild(empty);
+        elDetailTag.textContent = "";
+        return;
+      }
+
+      elDetailTag.textContent = a.id;
+
+      const top = document.createElement("div");
+      top.className = "detailTop";
+
+      const hero = document.createElement("div");
+      hero.className = "hero";
+
+      const img = document.createElement("img");
+      img.alt = a.name || "Alien image";
+      img.src = a.imageUrl || "";
+
+      const mark = document.createElement("div");
+      mark.className = "mark";
+      mark.textContent = (a.name || "?").slice(0, 1).toUpperCase();
+
+      if (a.imageUrl) {
+        img.style.display = "block";
+        hero.appendChild(img);
+      } else {
+        hero.appendChild(mark);
+      }
+
+      const head = document.createElement("div");
+
+      const h1 = document.createElement("div");
+      h1.className = "h1";
+      h1.textContent = a.name || "Unknown";
+
+      const lede = document.createElement("div");
+      lede.className = "lede";
+      lede.textContent = a.overview || "";
+
+      head.appendChild(h1);
+      head.appendChild(lede);
+
+      top.appendChild(hero);
+      top.appendChild(head);
+
+      const kv = document.createElement("div");
+      kv.className = "kv";
+      kv.appendChild(tile("Type", a.type));
+      kv.appendChild(tile("Homeworld", a.homeworld));
+      kv.appendChild(tile("Quadrant", a.quadrant));
+      kv.appendChild(tile("First appearance", a.firstAppearance));
+
+      const aff = document.createElement("div");
+      aff.className = "tile";
+      const ak = document.createElement("div");
+      ak.className = "k";
+      ak.textContent = "Affiliations";
+      const av = document.createElement("div");
+      av.className = "v";
+      av.textContent = "";
+      aff.appendChild(ak);
+      aff.appendChild(av);
+      aff.appendChild(chips(a.affiliations));
+
+      const people = document.createElement("div");
+      people.className = "tile";
+      const pk = document.createElement("div");
+      pk.className = "k";
+      pk.textContent = "Notable individuals";
+      const pv = document.createElement("div");
+      pv.className = "v";
+      pv.textContent = "";
+      people.appendChild(pk);
+      people.appendChild(pv);
+      people.appendChild(chips(a.notableIndividuals));
+
+      const secs = document.createElement("div");
+      secs.className = "sections";
+      secs.appendChild(section("Biology", a.biology));
+      secs.appendChild(section("Society & Culture", a.society));
+      secs.appendChild(section("Capabilities", a.capabilities));
+      secs.appendChild(section("Interstellar Relations", a.relations));
+
+      const apps = document.createElement("div");
+      apps.className = "section";
+      const ah = document.createElement("h3");
+      ah.textContent = "Key appearances";
+      const ap = document.createElement("p");
+      ap.textContent = "";
+      apps.appendChild(ah);
+      apps.appendChild(ap);
+      apps.appendChild(chips(a.keyAppearances));
+
+      elDetail.appendChild(top);
+      elDetail.appendChild(kv);
+      elDetail.appendChild(aff);
+      elDetail.appendChild(people);
+      elDetail.appendChild(secs);
+      elDetail.appendChild(apps);
+    };
+
+    const render = () => {
+      renderList();
+      renderDetail();
+      const active = elList.querySelector(".card.active");
+      if (active) active.scrollIntoView({ block: "nearest" });
+    };
+
+    elSearch.addEventListener("input", (e) => {
+      state.query = e.target.value || "";
+      render();
+    });
+
+    document.getElementById("clearBtn").addEventListener("click", () => {
+      state.query = "";
+      elSearch.value = "";
+      render();
+    });
+
+    document.getElementById("aboutBtn").addEventListener("click", () => {
+      alert("Aliens Console\n\nStarter build uses inline JSON for one species.\nNext step: move data to a separate JSON file, expand the roster, and add images.\n\nScope: canon aliens/species (excluding Star Trek: Discovery).");
+    });
+
+    render();
+  </script>
+</body>
+</html>

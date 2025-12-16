@@ -53,18 +53,37 @@
   {
     "id": "borg",
     "name": "Borg",
-    "type": "",
-    "quadrant": "",
-    "homeworld": "",
-    "affiliations": [],
-    "firstAppearance": "",
-    "overview": "",
-    "biology": "",
-    "society": "",
-    "capabilities": "",
-    "relations": "",
-    "notableIndividuals": [],
-    "keyAppearances": [],
+    "type": "Cybernetic collective of assimilated species (hive mind)",
+    "quadrant": "Delta Quadrant (origin and core territory); transwarp reach across multiple quadrants",
+    "homeworld": "No single homeworld; organized around Unicomplexes and mobile vessels (e.g., Borg cubes) in Delta Quadrant space",
+    "affiliations": [
+      "Borg Collective"
+    ],
+    "firstAppearance": "TNG: \"Q Who\"",
+    "overview": "The Borg are a vast cybernetic collective—organic beings forcibly integrated with machines—linked into a single hive mind known as the Collective. They pursue “perfection” by acquiring and integrating the biological and technological distinctiveness of other species, typically through assimilation. Borg drones act without personal identity, following collective imperatives communicated through subspace-linked transceivers.\n\nTo the Federation, the Borg emerged as an unprecedented threat: technologically adaptive, strategically patient, and uninterested in negotiation as equals. While the Borg’s on-screen introduction occurs in the 2360s, later canon reveals that events involving the Borg occurred earlier in Earth’s timeline due to time travel.",
+    "biology": "A Borg drone is an assimilated individual whose body has been altered with cybernetic implants and networked systems. Assimilation commonly involves nanoprobes and surgical augmentation that transform physiology, suppress individuality, and connect the subject to the hive mind. Drones rely on a mix of organic function and mechanical support, with implants synthesizing needed organic molecules and regulating bodily systems.\n\nDrones periodically regenerate in regeneration alcoves, which provide energy and maintenance for both organic and cybernetic components. Borg biology is not a single species; the Collective is composed of countless assimilated species, standardized into a functional drone phenotype by common implants, protocols, and interfaces.",
+    "society": "Borg society is the Collective: a centralized, distributed consciousness that overrides individual autonomy. Drones are assigned designations and functions rather than names, and the Collective evaluates other cultures strictly for usefulness to its pursuit of perfection.\n\nIn later canon, the Borg Queen exists as a coordinating entity within the hive—an individual ‘face’ of the Collective who can provide direction and impose order over complex operations. Even with a Queen, Borg decision-making remains fundamentally collective, with drones functioning as interchangeable components in an immense system.",
+    "capabilities": "The Borg are defined by their ability to assimilate and adapt. Their technology can rapidly adjust to weapon frequencies and defensive tactics, making repeated attacks with identical methods increasingly ineffective. Borg vessels are heavily armed and protected, and they can cut through starship hulls and tractor or transport targets with precision.\n\nBorg transwarp technology enables rapid movement across vast distances via transwarp conduits. Borg cubes—iconic, massively scaled vessels—can operate with enormous drone complements and carry out sustained assimilation campaigns.\n\nAt the individual level, drones are resilient, can operate for extended periods, and are supported by nanotech and automated repair/regeneration processes. The Collective’s shared knowledge base allows drones to act with coordinated efficiency without conventional communication delays.",
+    "relations": "The Borg’s most consequential Alpha Quadrant conflicts center on repeated attempts to assimilate Earth and the Federation. Key encounters include the initial warning encounter in the 2360s, the assimilation of Jean‑Luc Picard as Locutus during the crisis culminating at Wolf 359 and the Battle of Sector 001, and Voyager’s prolonged interactions with the Collective in the Delta Quadrant.\n\nThe Borg’s war with Species 8472 demonstrated limits to Borg assimilation and catalyzed major strategic shifts, including alliances of convenience and escalation in bio-technological weaponry. Over time, splinter phenomena and resistance movements emerged among drones (including Unimatrix Zero), showing that even within a hive mind, individuality can reassert itself under specific conditions.\n\nBorg activity intersects with multiple powers (Romulans, Klingons, Dominion-era Federation) primarily as an existential threat rather than a conventional geopolitical actor.",
+    "notableIndividuals": [
+      "Borg Queen",
+      "Locutus of Borg (Jean-Luc Picard)",
+      "Seven of Nine (Annika Hansen)",
+      "Hugh (Third of Five)",
+      "Icheb"
+    ],
+    "keyAppearances": [
+      "TNG: \"Q Who\"",
+      "TNG: \"The Best of Both Worlds\" / \"The Best of Both Worlds, Part II\"",
+      "TNG: \"I, Borg\"",
+      "Star Trek: First Contact",
+      "VOY: \"Scorpion\" / \"Scorpion, Part II\"",
+      "VOY: \"Dark Frontier\"",
+      "VOY: \"Unimatrix Zero\" / \"Unimatrix Zero, Part II\"",
+      "VOY: \"Endgame\"",
+      "ENT: \"Regeneration\"",
+      "PIC: \"The Last Generation\""
+    ],
     "imageUrl": ""
   },
   {
@@ -86,19 +105,39 @@
   },
   {
     "id": "changelings",
-    "name": "Changelings",
-    "type": "",
-    "quadrant": "",
-    "homeworld": "",
-    "affiliations": [],
-    "firstAppearance": "",
-    "overview": "",
-    "biology": "",
-    "society": "",
-    "capabilities": "",
-    "relations": "",
-    "notableIndividuals": [],
-    "keyAppearances": [],
+    "name": "Changelings (Founders)",
+    "type": "Shape-shifting species; Dominion ruling caste",
+    "quadrant": "Gamma Quadrant (Dominion); operatives active in the Alpha Quadrant during the Dominion War",
+    "homeworld": "Founders’ homeworld (Omarion Nebula, Gamma Quadrant); later relocated to a second homeworld deep in Dominion space",
+    "affiliations": [
+      "Dominion (founding species and leaders)",
+      "The Great Link (foundation of Changeling society)"
+    ],
+    "firstAppearance": "DS9: \"The Search\" / \"The Search, Part II\"",
+    "overview": "Changelings—also known as the Founders—are a shape-shifting species who created and rule the interstellar Dominion. Naturally existing as morphogenic, gelatinous lifeforms, they can assume the form of humanoids, animals, and even inanimate objects, making them among the most effective infiltrators in known space.\n\nCenturies of persecution by “solids” (non-shapeshifters) shaped the Founders’ worldview: they concluded that order could only be achieved by controlling solids through fear, obedience, and engineered proxy species. This philosophy led to the Dominion’s expansion across the Gamma Quadrant and culminated in covert destabilization operations in the Alpha Quadrant, escalating into the Dominion War.",
+    "biology": "In their natural state, Changelings exist as a viscous liquid (often described as a “morphogenic matrix”). They can restructure their bodies at will to imitate shapes and textures with remarkable fidelity, including complex humanoid forms. A Changeling can remain in a chosen form for extended periods, but shapeshifting is not merely cosmetic: it is also a core physiological requirement and mode of expression.\n\nChangelings do not rely on fixed internal organs in the way humanoids do; they can redistribute mass and function throughout their morphogenic body. Their adaptable physiology makes them difficult to detect and hard to kill by conventional means. Canon security measures like blood screenings were used as a stopgap against infiltration, but were imperfect and could be circumvented.\n\nDespite their resilience, the Founders were vulnerable to the morphogenic virus—an engineered degenerative disease intended to exterminate their species. The virus spread through linkage, and recovery ultimately depended on a cure negotiated at the end of the Dominion War.",
+    "society": "Changeling society is centered on the Great Link: the intermingling of many Changelings in liquid form, sharing thoughts, memories, and identity. The Link is treated not only as a social bond but as the basis of Changeling existence—an experience many Changelings describe as profoundly meaningful.\n\nAs Founders, they sit atop a rigid Dominion hierarchy. They genetically engineered the Jem’Hadar as soldiers and modified the Vorta as administrators and diplomats, designing both species to revere the Founders as gods and to maintain Dominion control without exposing Changelings directly.\n\nChangelings’ collective trauma and mistrust of solids drives much of their policy: they favor preemption, secrecy, and strict control, and they view dissent or uncontrolled contact as existential risk.",
+    "capabilities": "A Changeling’s defining capability is metamorphosis: it can become nearly any form—humanoid, animal, or object—enabling deep-cover infiltration, impersonation, and sabotage. They can also alter density and structure to slip through small openings, survive hostile environments, and evade restraints.\n\nLinking is both biological and informational: when Changelings merge in liquid form (or via direct contact), they can share experiences, emotions, and perspectives. This makes Changeling society extraordinarily cohesive and allows rapid cultural transmission.\n\nAt the strategic level, Founders combine infiltration with engineered proxy forces, using Vorta coordination and Jem’Hadar military power to project control while Changelings themselves remain hidden or protected.",
+    "relations": "The Founders’ core conflict is with “solids,” whom they see as inherently dangerous. Their response was the creation of the Dominion and, eventually, covert operations in the Alpha Quadrant that sparked paranoia and political instability (including Earth security crises tied to Changeling infiltration).\n\nDuring the Dominion War, the Female Changeling personally oversaw major policy and military decisions, including alliances of convenience and brutal reprisals. The war’s end was tied directly to the Founders’ survival: the morphogenic virus weakened the Great Link, and the cure became a decisive bargaining point.\n\nOdo—an outlier Changeling raised among solids—proved pivotal. His decisions repeatedly counterbalanced Founders policy, and his final return to the Great Link, carrying both experience and empathy for solids, is treated in canon as a transformative moment for Changeling–Federation relations.",
+    "notableIndividuals": [
+      "Odo",
+      "Female Changeling",
+      "Laas",
+      "Changeling impostor “Lovok” (Tal Shiar infiltration)",
+      "Martok impostor (Changeling infiltration)"
+    ],
+    "keyAppearances": [
+      "DS9: \"The Search\" / \"The Search, Part II\"",
+      "DS9: \"The Adversary\"",
+      "DS9: \"Homefront\" / \"Paradise Lost\"",
+      "DS9: \"Improbable Cause\" / \"The Die is Cast\"",
+      "DS9: \"Broken Link\"",
+      "DS9: \"In Purgatory's Shadow\" / \"By Inferno's Light\"",
+      "DS9: \"When It Rains...\"",
+      "DS9: \"Extreme Measures\"",
+      "DS9: \"What You Leave Behind\"",
+      "PIC: \"The Next Generation\" (Changeling-related arc)"
+    ],
     "imageUrl": ""
   },
   {

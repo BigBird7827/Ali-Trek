@@ -459,44 +459,16 @@
       </div>
     </div>
 
-    <div class="foot">Inline JSON starter build. Next step: swap to external JSON and expand the roster.</div>
+    <div class="foot">External JSON build. Next step: expand the roster and add images.</div>
   </div>
 
   <script>
-    const aliensData = [
-      {
-        id: "vulcans",
-        name: "Vulcans",
-        type: "Humanoid species",
-        quadrant: "Alpha / Beta",
-        homeworld: "Vulcan",
-        affiliations: ["United Federation of Planets (founding member)"],
-        firstAppearance: "TOS pilot: \"The Cage\" (original pilot)",
-        overview:
-          "Vulcans are a long-lived humanoid species known for disciplined logic, cultural restraint, and a commitment to peaceful self-mastery shaped by their history of extreme emotion and violence. They were among humanity’s earliest major interstellar contacts and became one of the Federation’s founding worlds.",
-        biology:
-          "Typically stronger than humans and adapted to a hotter, drier environment. Copper-based blood (green). Adult Vulcans experience pon farr roughly every seven years, a biological mating drive that can become life-threatening if unresolved.",
-        society:
-          "A philosophical culture rooted in Surak’s teachings, emphasizing logic, emotional control, and ethical restraint. Vulcan society often values privacy and personal discipline, and can appear aloof to outsiders.",
-        capabilities:
-          "Telepathic techniques include the Vulcan mind meld. Many Vulcans practice martial disciplines; the Vulcan neck pinch is a well-known incapacitation technique.",
-        relations:
-          "Vulcans maintain close ties with the Federation but have a complex relationship with their ancient offshoots, the Romulans. Their influence on Starfleet science, diplomacy, and ethics is extensive.",
-        notableIndividuals: ["Spock", "Sarek", "T'Pol", "Tuvok"],
-        keyAppearances: [
-          "TOS: \"Amok Time\" (pon farr; Vulcan society)",
-          "TOS: \"Dagger of the Mind\" (mind meld depiction)",
-          "TNG: \"Sarek\" (mind meld consequences)",
-          "ENT: \"Broken Bow\" / \"The Forge\" arc (Vulcan politics)",
-          "VOY: \"Meld\" / \"Blood Fever\" (Vulcan telepathy; pon farr)"
-        ],
-        imageUrl: ""
-      }
-    ];
+    let aliensData = [];
+    const DATA_URL = "https://raw.githubusercontent.com/BigBird7827/Ali-Trek/main/Aliens.json";
 
     const state = {
       query: "",
-      selectedId: aliensData[0]?.id || null
+      selectedId: null
     };
 
     const elList = document.getElementById("list");
@@ -718,6 +690,28 @@
       elDetail.appendChild(apps);
     };
 
+    
+    const loadData = async () => {
+      try {
+        const res = await fetch(DATA_URL, { cache: "no-store" });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const json = await res.json();
+        if (!Array.isArray(json)) throw new Error("JSON root must be an array");
+        aliensData = json;
+        if (!state.selectedId && aliensData.length) state.selectedId = aliensData[0].id;
+        render();
+      } catch (err) {
+        elList.innerHTML = "";
+        elDetail.innerHTML = "";
+        elCount.textContent = "0 items";
+        elDetailTag.textContent = "load error";
+        const msg = document.createElement("div");
+        msg.className = "empty";
+        msg.textContent = `Failed to load Aliens.json from GitHub. ${err?.message || err}`;
+        elDetail.appendChild(msg);
+      }
+    };
+
     const render = () => {
       renderList();
       renderDetail();
@@ -740,7 +734,7 @@
       alert("Aliens Console\n\nStarter build uses inline JSON for one species.\nNext step: move data to a separate JSON file, expand the roster, and add images.\n\nScope: canon aliens/species (excluding Star Trek: Discovery).");
     });
 
-    render();
+    loadData();
   </script>
 </body>
 </html>

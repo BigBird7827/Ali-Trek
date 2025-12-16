@@ -143,18 +143,41 @@
   {
     "id": "ferengi",
     "name": "Ferengi",
-    "type": "",
-    "quadrant": "",
-    "homeworld": "",
-    "affiliations": [],
-    "firstAppearance": "",
-    "overview": "",
-    "biology": "",
-    "society": "",
-    "capabilities": "",
-    "relations": "",
-    "notableIndividuals": [],
-    "keyAppearances": [],
+    "type": "Warp-capable humanoid species; mercantile civilization",
+    "quadrant": "Alpha Quadrant (Ferengi space; frequent activity across Alpha/Beta Quadrants)",
+    "homeworld": "Ferenginar (Ferenginar system)",
+    "affiliations": [
+      "Ferengi Alliance",
+      "Ferengi Commerce Authority (FCA)"
+    ],
+    "firstAppearance": "TNG: \"The Last Outpost\"",
+    "overview": "The Ferengi are a warp-capable humanoid species whose society is built around commerce, contract, and the relentless pursuit of profit—most often measured in latinum. For millennia, Ferengi culture elevated businessmen as its primary pillars, with business and politics gradually merging into a single profit-driven framework.\n\nFerengi life is guided by the Rules of Acquisition, a sprawling set of aphorisms treated as both personal philosophy and business law. The Rules shape everything from negotiation etiquette to family life, and they underpin the Ferengi Alliance’s institutions and social expectations.\n\nAlthough the Ferengi were initially perceived by the Federation as potential adversaries, on-screen history reframed them as complex players: sometimes opportunistic and morally flexible, sometimes surprisingly principled in their own terms, and ultimately capable of meaningful social change—especially during the late 24th century.",
+    "biology": "Ferengi are humanoid and easily recognized by their prominent ears and enlarged lobes, which carry strong cultural significance. Ferengi often describe having “the lobes” for business; their lobes are associated with instinct, status, and even sensual response—reported to tingle at the scent of profit or sexual arousal.\n\nMost Ferengi are largely hairless, though some individuals can grow facial stubble, and elderly Ferengi have been known to grow hair in their ears. Ferengi physiology differs measurably from Humans: their blood pressure is notably higher, and their biochemistry can render certain Human drugs (including some truth serums) ineffective.\n\nFerengi blood has been depicted as yellow, and Ferengi medical notes in canon reference blood cells called pyrocytes. Young Ferengi are sometimes referred to as “lobelings,” reflecting the cultural centrality of their ears and lobes.",
+    "society": "Traditional Ferengi society is intensely patriarchal and contractual. Females (often dismissively called “females”) were historically barred from earning profit, traveling, or even learning to read, and were expected to remain unclothed and politically silent. These restrictions were not merely custom but enforced social law.\n\nOver time—especially during the tenure of Grand Nagus Zek—Ferengi society experienced disruptive reform movements. Amendments to the Ferengi Bill of Opportunities began opening profit-making and civic participation to women, triggering significant social and economic turmoil on Ferenginar.\n\nFerengi culture includes distinctive rituals and business customs: formalized greetings and deal-sealing gestures, admission fees and waivers for entering a Ferengi home, and coming-of-age traditions like the Ferengi Attainment Ceremony, where a young Ferengi might auction personal items to raise startup capital.\n\nFerengi spirituality mirrors their economics. Many Ferengi view existence through the Great Material Continuum and the Great River, expecting profit in life to translate into leverage and opportunity in the afterlife.",
+    "capabilities": "Ferengi power is less about conquest than leverage: information, contracts, and trade networks. Ferengi entrepreneurs excel at identifying market gaps, arbitrage opportunities, and political openings that can be monetized.\n\nInstitutionally, the Ferengi Alliance maintains commercial enforcement mechanisms rather than a conventional military. The Ferengi Commerce Authority (FCA) polices business practices via Liquidators and the Board of Liquidators, enforcing trade by-laws and the Ferengi Code.\n\nIn space, Ferengi commerce is backed by starships (often privately operated) and quasi-military ranks such as DaiMon. D'Kora-class marauders have been used for mercantile exploration and, when needed, protection of business interests.\n\nFerengi technology and products have circulated widely in canon, and Ferengi operators have shown a willingness to engage in ethically gray markets—including weapons dealing—when the profit margin is high.",
+    "relations": "Relations with the Federation evolved from suspicion and sporadic conflict in the 2360s to sustained contact and cultural exchange, especially through Ferengi individuals embedded in Federation space. Ferengi-operated businesses (notably Quark’s on Deep Space 9) became points of contact where Ferengi norms, Federation law, and frontier politics collided.\n\nAfter the Bajoran wormhole’s discovery (2369), the Ferengi Alliance under Grand Nagus Zek aggressively pursued Gamma Quadrant opportunities and became one of the first Alpha Quadrant powers to learn of the Dominion. Ferengi policy generally favored neutrality—summed up by the ethos that both war and peace can be “good for business”—though individual Ferengi repeatedly became entangled in major events.\n\nBy the end of the Dominion War era, Ferengi society was visibly shifting: reformist pressures, changing attitudes toward women’s rights and profit participation, and a broader engagement with interstellar politics signaled that the Alliance was no longer a static caricature but a living civilization capable of transformation.",
+    "notableIndividuals": [
+      "Quark",
+      "Rom",
+      "Nog",
+      "Grand Nagus Zek",
+      "Ishka",
+      "Brunt (FCA)",
+      "Pel"
+    ],
+    "keyAppearances": [
+      "TNG: \"The Last Outpost\"",
+      "TNG: \"The Battle\"",
+      "DS9: \"The Nagus\"",
+      "DS9: \"Rules of Acquisition\"",
+      "DS9: \"Family Business\"",
+      "DS9: \"Bar Association\"",
+      "DS9: \"Little Green Men\"",
+      "DS9: \"The Magnificent Ferengi\"",
+      "DS9: \"The Dogs of War\"",
+      "VOY: \"False Profits\"",
+      "ENT: \"Acquisition\""
+    ],
     "imageUrl": ""
   },
   {

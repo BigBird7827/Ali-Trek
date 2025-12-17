@@ -521,6 +521,12 @@
       const select = () => {
         state.selectedId = a.id;
         render();
+      setTimeout(() => {
+        const se = document.scrollingElement || document.documentElement;
+        if (se && se.scrollTo) se.scrollTo({ top: 0, left: 0, behavior: "auto" });
+        window.scrollTo(0, 0);
+        document.body.scrollTop = 0;
+      }, 0);
       };
 
       card.addEventListener("click", select);
@@ -715,8 +721,6 @@
     const render = () => {
       renderList();
       renderDetail();
-      const active = elList.querySelector(".card.active");
-      if (active) active.scrollIntoView({ block: "nearest" });
     };
 
     elSearch.addEventListener("input", (e) => {
@@ -725,6 +729,10 @@
     });
 
     document.getElementById("clearBtn").addEventListener("click", () => {
+          window.scrollTo(0, 0);
+          document.documentElement.scrollTop = 0;
+          document.body.scrollTop = 0;
+
       state.query = "";
       elSearch.value = "";
       render();

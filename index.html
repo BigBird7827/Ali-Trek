@@ -104,7 +104,17 @@
       white-space: nowrap;
     }
 
-    .btn:hover {
+    
+    #mainConsoleLink {
+      margin-left: auto;
+      margin-right: auto;
+      width: fit-content;
+    }
+
+    #clearBtn {
+      margin-left: 75px;
+    }
+.btn:hover {
       transform: translateY(-1px);
       border-color: var(--line);
       background: linear-gradient(180deg, rgba(255,255,255,0.14), rgba(255,255,255,0.06));
@@ -121,7 +131,9 @@
       border: 2px solid var(--line2);
       background: rgba(7, 10, 18, 0.40);
       box-shadow: var(--soft);
-      min-width: min(520px, 46vw);
+      width: min(260px, 23vw);
+      min-width: min(260px, 23vw);
+      max-width: min(260px, 23vw);
     }
 
     .search input {
@@ -419,48 +431,18 @@
       .kv { grid-template-columns: 1fr; }
     }
   </style>
-<style id="mainConsoleNavStyle">
-  #mainConsoleLink {
-    position: fixed;
-    top: 16px;
-    left: 16px;
-    z-index: 99999;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 10px 14px;
-    border-radius: 12px;
-    text-decoration: none;
-    font-weight: 700;
-    letter-spacing: 0.06em;
-    font-size: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.25);
-    background: rgba(20, 25, 35, 0.85);
-    color: rgba(255, 255, 255, 0.92);
-    backdrop-filter: blur(6px);
-    -webkit-backdrop-filter: blur(6px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
-    transition: transform 0.12s ease, box-shadow 0.12s ease, background 0.12s ease;
-  }
-  #mainConsoleLink:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.42);
-    background: rgba(26, 33, 46, 0.9);
-  }
-  #mainConsoleLink:active {
-    transform: translateY(0px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.35);
-  }
-</style>
 </head>
 <body>
-  <a id="mainConsoleLink" href="https://bigbird7827.github.io/Main-Console/">MAIN CONSOLE</a>
-  <div class="wrap">
+<div class="wrap">
     <div class="topbar">
       <div class="brand">
         <div class="title">Aliens Console</div>
         <div class="sub">Star Trek aliens & species (canon, excluding Discovery)</div>
       </div>
+
+      
+
+      <a id="mainConsoleLink" class="btn" href="https://bigbird7827.github.io/Main-Console/">MAIN CONSOLE</a>
 
       <div class="search">
         <span class="pill">SEARCH</span>
